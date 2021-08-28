@@ -124,8 +124,11 @@ export default {
 
       Swall.showLoading();
 
-      const picture = await uploadImage(this.fileImage);
-      this.entry["picture"] = picture;
+      if (this.fileImage) {
+        const picture = await uploadImage(this.fileImage);
+        this.entry["picture"] = picture;
+        this.localImage = null;
+      }
 
       if (this.entry.id) {
         await this.updateEntries(this.entry);
@@ -139,8 +142,6 @@ export default {
           },
         });
       }
-
-      this.localImage = null;
 
       // Swall.hideLoading();
       Swall.fire("Guardado", "Entrada registrada con exito", "success");
