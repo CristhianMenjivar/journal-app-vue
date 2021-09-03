@@ -2,7 +2,7 @@
 // };
 
 export const setEntries = (state, entries) => {
-  state.entries = [...state.entries, ...entries];
+  state.entries = [...entries];
   state.isLoading = false;
 };
 
@@ -19,4 +19,8 @@ export const addEntries = (state, entry) => {
 
 export const deleteEntries = (state, id) => {
   state.entries = state.entries.filter((e) => e.id !== id);
+};
+
+export const clearEntries = (state) => {
+  state.entries = [];
 };

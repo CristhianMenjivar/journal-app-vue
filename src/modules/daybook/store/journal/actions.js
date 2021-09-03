@@ -1,8 +1,7 @@
 // export const myAction = async ({ commit }) => {
+// }
 
 import journalApi from "@/api/journalApi";
-
-// }
 
 const PATH = "/entries";
 
